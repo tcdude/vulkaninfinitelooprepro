@@ -1,7 +1,7 @@
 const fs = require("fs");
 const child_process = require("child_process");
 
-let project = new Project('vulkanshaderstriderepro');
+let project = new Project('vulkaninfinitelooprepro');
 
 project.addFile('Sources/**');
 project.addIncludeDir('Sources');

@@ -24,9 +24,13 @@ static kinc_g4_constant_location_t i_resolution_loc;
 static kinc_g4_constant_location_t sg_mouse_loc;
 static kinc_g4_constant_location_t sg_alpha_loc;
 
-static float sg_data[16] = {
-    4.500f,  0.000f,  0.000f,  -12.000f, 0.000f,  0.000f,  0.000f,  0.020f, 0.020f,   0.020f,
-    0.870f,  0.880f,  0.860f,  0.180f,   0.250f,  0.310f};
+static float sg_data[60] = {
+    4.500f,  9.295f,  5.981f,  -4.672f, 0.000f,  0.000f,  0.000f,  0.020f, 0.020f,   0.020f,
+    0.870f,  0.880f,  0.860f,  0.180f,  0.250f,  0.310f,  0.030f,  0.040f, 0.040f,   -0.000f,
+    -0.030f, -0.050f, -0.120f, -0.120f, -0.120f, 0.000f,  0.000f,  0.010f, -0.030f,  -0.020f,
+    -0.020f, -0.080f, -0.090f, -0.090f, -0.160f, -0.190f, -0.220f, 0.200f, 150.000f, 100.000f,
+    0.001f,  10.500f, 0.000f,  0.500f,  -0.500f, 1.000f,  1.000f,  1.000f, 1.000f,   1.000f,
+    1.000f,  1.000f,  1.000f,  1.000f,  1.000f,  0.000f,  0.000f,  0.000f, 0.000f,   0.000f};
 
 #define HEAP_SIZE 1024 * 1024
 static uint8_t *heap = NULL;
@@ -224,7 +228,7 @@ static void update(void *data) {
 		kinc_g4_set_pipeline(&pipeline);
 		kinc_g4_set_vertex_buffer(&vertices);
 		kinc_g4_set_index_buffer(&indices);
-		kinc_g4_set_floats(sg_data_loc, sg_data, 16);
+		kinc_g4_set_floats(sg_data_loc, sg_data, 60);
 		kinc_g4_set_float2(sg_alpha_loc, 1.0f, 1.0f);
 		kinc_g4_set_float2(sg_mouse_loc, 0, 0);
 		kinc_g4_set_float2(i_resolution_loc, 1024, 768);
