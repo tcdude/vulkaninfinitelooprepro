@@ -1,0 +1,6 @@
+build
+Deployment/**
+!Deployment/keepme.txt
+!Deployment/shader.*.glsl
+.vscode
+.cache
